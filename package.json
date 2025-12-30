@@ -5,14 +5,14 @@
   "main": "index.js",
   "type": "module",
   "imports": {
-    "#config": "./src/config/*",
-    "#controllers": "./src/controllers/*",
-    "#models": "./src/models/*",
-    "#routes": "./src/routes/*",
-    "#utils": "./src/utils/*",
-    "#services": "./src/services/*",
-    "#middleware": "./src/middleware/*",
-    "#validations": "./src/validations/*"
+    "#config/*": "./src/config/*",
+    "#controllers/*": "./src/controllers/*",
+    "#models/*": "./src/models/*",
+    "#routes/*": "./src/routes/*",
+    "#utils/*": "./src/utils/*",
+    "#services/*": "./src/services/*",
+    "#middleware/*": "./src/middleware/*",
+    "#validations/*": "./src/validations/*"
   },
   "scripts": {
     "dev": "node --watch src/index.js",
@@ -29,6 +29,8 @@
   "license": "ISC",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
     "express": "^5.2.1",
