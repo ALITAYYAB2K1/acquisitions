@@ -48,7 +48,7 @@ export const securityMiddleware = async (req, res, next) => {
       });
       return res.status(429).json({
         error: 'Rate limit exceeded',
-        message: 'Too many requests',
+        message,
       });
     }
     if (decision.isDenied() && decision.reason.isShield()) {
