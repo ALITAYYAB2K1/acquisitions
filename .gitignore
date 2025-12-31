@@ -6,3 +6,4 @@ node_modules/
 logs/
 drizzle/
 .neon_local/
+coverage/

@@ -19,7 +19,11 @@ app.use(
     stream: { write: message => logger.info(message.trim()) },
   })
 );
-app.use(securityMiddleware);
+
+// Skip security middleware in test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.use(securityMiddleware);
+}
 app.get('/', (req, res) => {
   logger.info('Received GET request');
   res.status(200).send('Hello from acquisitions API!');
@@ -39,4 +43,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use((req, res) => {
+  res.status(404).json({ message: 'Not Found' });
+});
 export default app;
